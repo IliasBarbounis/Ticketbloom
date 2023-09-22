@@ -22,57 +22,59 @@
 <ul>
   <li>
      <h3>Home page</h3>
-      <h5>Functions:Sign up,Log in</h5>
-      <img src='Screenshots/'></img>
-      <h4>Sign up</h4>
-      <h5>User Inserts the Email,Username and Fullname to Sign up.</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-47-03.png'></img>
-      <h4>User Sign up (When there is already a user with this e-mail)</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-47-43.png'></img>
-      <h4>User Sign up (When there is already a user with this username)</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-48-34.png'></img>    
-      <h4>User/Admin Log in.</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-49-49.png'></img> 
-      <h4>User/Admin Log in (In case of wrong email or username).</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-50-20.png'></img> 
-      <h4>User/Admin Log in (In case of wrong password).</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-50-55.png'></img> 
-    </li>
-    <li>
-      <h3>User Home page</h3>
-      <h4>Functions:Create Note,Delete Note by Title,Logout,Delete Account</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-51-10.png'></img>
-      <h4>Create Note</h4>
-      <h5>User Enters Note Title,Note Text and Keywords.</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-54-08.png'></img>
-      <h5>Note Created.</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-54-37.png'></img>
-      <h4>Delete by Title</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-55-06.png'></img>
-      <h5>Note Successfully Deleted</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-55-21.png'></img>
-      <h4>Delete User Account</h4>
-      <h5>Users before Delete Account</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-56-34.png'></img>
-      <h5>Users after Delete Account.</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-56-59.png'></img>
-      <h5>Returns to login/Register screen.</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-44-52.png'></img>
-    </li>
-    <li>
-      <h3>Admin Home page</h3>
-      <h4>Functions: Create Admin,Delete User by Username,Logout</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-57-34.png'></img>
-      <h4>Create Admin</h4>   
-      <h5>Admin Inserts New Admin Username,Email and Password.</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-58-08.png'></img>
-      <h4>Admin Created</h4>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-58-30.png'></img>
-      <h4>Delete User</h4>
-      <h5>Delete User (In case of username not found).</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-59-18.png'></img>
-      <h4>Logout</h4> 
-      <h5>Returns to login/Register screen.</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-44-52.png'></img> 
-    </li>
+      <h5>Functions: Sign in, Register, My Profile, About, Artistic Events</h5>
+      <img src='Screenshots/Home.jpg'></img>
+  </li>
+  <li>
+     <h3>Sign in</h3>
+      <img src='Screenshots/Login.jpg'></img>
+  </li>
+  <li>
+     <h3>Register</h3>
+      <img src='Screenshots/Register.jpg'></img>
+  </li>
+  
+  <li>
+     <h3>About</h3>
+      <img src='Screenshots/About.jpg'></img>
+  </li>
+  <li>
+     <h3>About</h3>
+      <img src='Screenshots/About.jpg'></img>
+  </li>
+  <li>
+     <h3>Booking History</h3>
+      <img src='Screenshots/Booking History.jpg'></img>
+  </li>
+  <li>
+     <h3>My Profile</h3>
+      <img src='Screenshots/User Profile.jpg'></img>
+  </li>
+  <li>
+     <h3>Artistic Events</h3>
+      <img src='Screenshots/Artistic Events.jpg'></img>
+  </li>
+  <li>
+     <h3>Booking Page</h3>
+      <img src='Screenshots/Booking Page 1.jpg'></img>
+      <img src='Screenshots/Booking Page 2.jpg'></img>
+      <img src='Screenshots/Booking Page 3.jpg'></img>
+  </li>
+  <li>
+     <h3>Review Page</h3>
+      <img src='Screenshots/Review Page.jpg'></img>
+  </li>
+  <li>
+     <h3>Edit Users</h3>
+      <img src='Screenshots/User Edit.jpg'></img>
+  </li>
+  <li>
+     <h3>Create Event</h3>
+      <img src='Screenshots/Create Event 1.jpg'></img>
+       <img src='Screenshots/Create Event 2.jpg'></img>
+  </li>
+  <li>
+     <h3>Edit About</h3>
+      <img src='Screenshots/About Edit.jpg'></img>
+  </li>
 </ul>
