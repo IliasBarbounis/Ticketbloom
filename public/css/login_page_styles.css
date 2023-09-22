@@ -1,0 +1,122 @@
+    
+    .navbar{
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  
+    .logo{
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 15px 0;
+      text-decoration: none;
+    }
+
+  
+  
+  
+  label{
+    color: rgb(255, 255, 255);
+  }
+
+  form {
+    border: 3px solid #f1f1f1;
+    width: 400px;
+    margin: 8% auto;  
+  }
+  
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .cancelbtn {
+    width: auto;
+    padding: 10px 5px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+
+  .container {
+    padding: 16px;
+  }
+
+  .formHeader{
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 25;
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+    
+   }
+   
+    .container{
+      width: 100%;
+      min-height: 50vh;
+      padding-left: 8%;
+      padding-right: 8%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+
+  
+    nav{
+      flex: 1;
+      text-align: right;
+    }
+
+  
+    footer {
+      display:flex;
+      position:fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      border-top: 1px solid white;
+      justify-content:center;
+      align-items:center;
+      }
+  
+      .address {
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        margin:auto;
+        text-decoration: none;
+        }
+
+      @media only screen and (max-width:700px){
+
+        form {
+      
+          border: 3px solid #f1f1f1;
+          width: 100%;
+          margin: 10% auto;  
+        } 
+
+      }

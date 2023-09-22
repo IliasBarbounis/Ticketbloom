@@ -1,0 +1,95 @@
+<html lang="en" >
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/logged_in_page.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <title>User Home</title>
+    </head> 
+    <body style="background-color:#122f69;" ng-app="myApp">
+            <div class="container">
+                
+                <div class="navbar">
+                    <a href="/" class="logo">Ticketbloom</a>
+                    <p class="name"><b>User: <%=username %></b></p>
+                    
+                    <nav>
+                      <ul id="menuList" >
+                          <div id="parent">
+                              <div id="center">
+                                  <li><a href="/artistic_events" class="cb">Artistic Events</a></li>
+                              </div>
+                              <div id="right">
+                                <li><a href="/my_profile" class="rb">My Profile</a></li>
+                                <li><a href="/about" class="rb">About</a></li>
+                                <li><a href="/logout" class="rb">Logout</a></li>
+                                
+                                
+                              </div>   
+                          </div>         
+                      </ul>
+                      
+                    </nav>
+              
+                    
+                    
+  
+                    <img src="/general_images/menu.png" class="menu-icon" 
+                    onclick="togglemenu()">
+                  </div>
+              
+              
+                    
+                    <div class="center-text">
+                        
+                        
+                          <p class="text">Booking History</p>
+                          <br><br>
+                          <% data.forEach((item) => { %>
+                            <div class="history"> 
+                                <b><%= item.event_date %></b>
+                                <br>
+                                <%= item.event_title %>
+                                <br>
+                                Seats:
+                                <%= item.ticket_1_seat %>
+                                <%= item.ticket_2_seat %>
+                                <%= item.ticket_3_seat %>
+                                <%= item.ticket_4_seat %>
+               
+                              <br><br>
+                            </div>
+                          <% }); %>
+ 
+                    </div>
+                   
+                </div>
+
+   
+    </div>
+        
+    <script>
+        var menuList = document.getElementById("menuList");
+
+        menuList.style.maxHeight = "0px";   
+
+        function togglemenu(){
+            if(menuList.style.maxHeight == "0px"){
+                menuList.style.maxHeight = "200px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+        <footer>
+            <a href="https://www.ds.unipi.gr/en/home-en/" class="address">2023 © Department of Digital Systems</a>
+        </footer>
+    </body>
+</html>

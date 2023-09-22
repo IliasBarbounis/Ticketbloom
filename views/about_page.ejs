@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+    <link rel="stylesheet" href="css/about_page_styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body style="background-color:#122f69;">
+    
+    
+        <div class="container">
+          
+            <div class="navbar">
+              <a href="/" class="logo">Ticketbloom</a>
+              
+              <nav>
+                <ul id="menuList" ng-app ng-init="isLoggedIn = <%=in_session %>">
+                    <div id="parent">
+                        <div id="center">
+                            <li><a href="/artistic_events" class="cb">Artistic Events</a></li>
+                        </div>
+                        <div id="right">
+                          <div ng-hide = "isLoggedIn">
+                            <li><a href="/login" class="rb">Sign In</a> </li>
+                            <li><a href="/register" class="rb" >Register</a></li>
+                            <li><a href="/my_profile" class="rb">My Profile</a></li>
+                          </div>
+                          <div ng-show = "isLoggedIn">
+                            
+                            <li><a href="/my_profile" class="rb">My Profile</a></li>
+                            <li><a href="/about" class="rb">About</a></li>
+                            <li><a href="/logout" class="rb">Logout</a></li>
+                           </div>
+                          
+                        </div>   
+                    </div>         
+                </ul>
+                
+                
+              </nav>
+
+              <img src="/general_images/menu.png" class="menu-icon" 
+                  onclick="togglemenu()">
+            </div>
+        
+            
+                <div class="center-text">
+                  <h1><%= about.title %></h1>
+                  <br><br>
+                  <p><%= about.text %></p>
+                </div>
+
+                <script>
+                  var menuList = document.getElementById("menuList");
+          
+                  menuList.style.maxHeight = "0px";   
+          
+                  function togglemenu(){
+                      if(menuList.style.maxHeight == "0px"){
+                          menuList.style.maxHeight = "200px";
+                      }
+                      else{
+                          menuList.style.maxHeight = "0px";
+                      }
+                  }
+              </script>
+                  
+    <footer>
+        <a href="https://www.ds.unipi.gr/en/home-en/" class="address">2023 © Department of Digital Systems</a>
+    </footer>
+    
+</body>
+</html>
+
+

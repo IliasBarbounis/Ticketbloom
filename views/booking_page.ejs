@@ -1,0 +1,297 @@
+<html lang="en" >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="css/booking_page_styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Booking</title>
+   
+</head>
+
+<body style="background-color:#122f69;">
+
+    <div class="container">
+        <div class="navbar">
+
+            <a href="/" class="logo">Ticketbloom</a>
+
+            <nav>
+              <ul id="menuList" ng-app ng-init="isLoggedIn =">
+                  <div id="parent">
+                      <div id="right">
+                       
+                   
+                          <li><a href="/review?event=<%= event.eventID %>" class="rb">Review</a></li>
+                          <li><a href="/my_profile" class="rb">My Profile</a></li>
+                          <li><a href="/about" class="rb">About</a></li>
+                          
+                          <li><a href="/logout" class="rb">Logout</a></li>
+                         </div>
+                        
+                  
+                  </div>         
+              </ul>
+
+            
+              
+            </nav>
+           
+
+        </div class="event">
+          <img src="data:image/<%=event.imageMax.contentType%>;base64,<%=event.imageMax.toString('base64')%>" class="event_image"/>
+          <br>
+          <div class="info">
+            <h2><%= event.title %></h2>
+            <h3><%= event.date %></h3>
+            <h3><%= event.place %></h3>
+            <h3><%= event.time %></h3>
+          </div>
+          
+          <p><%= event.description %></p>
+          
+          <div  class = "bigbox">
+      
+            <div class="container">
+              <form action="/submit_booking" method="POST" id="myForm" class="bigform">
+          
+            
+                  <label class="formHeader"><b>Book Your Tickets Now</b></label>
+
+                  <input type="hidden" value="<%= username %>" name="username">
+                
+                  
+                  <input type="hidden" value="<%= event.title %>" name="event_title">
+
+                  <input type="hidden" value="<%= event.date %>" name="event_date">
+
+                  <br></br>
+                  <h2><b>Ticket Prices</b></h2>
+
+                  <ul>
+                  <li>Economy: <label id="ticket1Price"><%= event.ticket1Price %></label>€ </li>
+                  <label for="">Available Seats: <%= event.ticket1Seats %></label>
+                  <br>
+                  <label for="">Seats A1 - A40</label>
+                  <br></br>
+                  <li>Standard: <label id="ticket2Price"><%= event.ticket2Price %></label>€</li>
+                  <label for="">Available Seats: <%= event.ticket2Seats %></label>
+                  <br>
+                  <label for="">Seats B41 - B70</label>
+                  <br></br>
+                  <li>VIP: <label id="ticket3Price"><%= event.ticket3Price %></label>€</li>
+                  <label for="">Available Seats: <%= event.ticket3Seats %></label>
+                  <br>
+                  <label for="">Seats C71 - C100</label>
+                  </ul>
+
+                  <br></br>
+
+                  
+                    <label for="uname"><b>Ticket Number: </b></label>
+
+                    <select id="ticket-quantity" name="ticket-quantity" >
+                      <option selected="selected">
+                        0
+                        </option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+
+                    <br></br>
+                    
+                    <div id="ticket-options"></div>
+
+                    <br></br>
+
+                    
+                    <label id = "labels"for="">Total Price: <span id="total-price">0€</span></label>
+
+                    <br></br>
+
+                  
+
+                  <button id="showForm1Button" type="button" onclick="setValue()">Next</button>
+
+                  <div id="newForm" style="display: none;">
+                    <br><br>
+                      <div id="formContainer"></div>
+                      <br><br>
+
+                      <button id="showForm2Button" type="button">Next</button>
+                      <br><br>
+              
+                  </div>
+
+              
+
+                  <div id="newForm1" style="display: none;">
+                  <h2>Payment Data</h2>
+                  <br>
+                  <label for="email"><b>e-mail</b></label>
+                  <input type="text" placeholder="Enter e-mail" name="email"required> 
+                  <br></br>
+
+                  <label for="uname"><b>Choose card type</b></label>
+                  </br><br>
+                  <input type="radio" name="card_type" value="Mastercard">
+                  <label for="adult">Mastercard</label><br>
+                  <input type="radio" name="card_type" value="Visa">
+                  <label for="child">Visa</label><br>
+                  </br><br>
+                  
+                  <label for="uname"><b>Insert Card Number</b></label>
+                  </br></br>
+
+                  <div class="container1">
+                    <input type="text" maxlength="4" name="first_4">_
+                    <input type="text" maxlength="4" name="second_4">_
+                    <input type="text" maxlength="4" name="third_4">_
+                    <input type="text" maxlength="4"name="fourth_4">
+                  </div>  
+
+                  </br></br>
+                  <label for="uname"><b>Type the Number You See Bellow</b></label>
+
+                  <br><br>
+                  <label id="random-number"></label>
+                  <input type="text" maxlength="5" id="random_num" >
+
+                  <button type="submit">Complete Booking</button>
+              </form>
+
+              </div>
+
+            </div>
+          
+          </div>
+     
+          <script>
+              const ticketQuantitySelect = document.getElementById('ticket-quantity');
+              const ticketOptionsContainer = document.getElementById('ticket-options');
+              const totalPriceElement = document.getElementById('total-price');
+              const ticket1Price = document.getElementById('ticket1Price');
+              const ticket2Price = document.getElementById('ticket2Price');
+              const ticket3Price = document.getElementById('ticket3Price');
+
+
+              const ticketPrices = {
+                economy: parseInt(ticket1Price.textContent, 10),
+                standard: parseInt(ticket2Price.textContent, 10),
+                vip: parseInt(ticket3Price.textContent, 10)
+              };
+
+              ticketQuantitySelect.addEventListener('change', () => {
+                const selectedQuantity = parseInt(ticketQuantitySelect.value);
+
+                ticketOptionsContainer.innerHTML = '';
+
+                for (let i = 1; i <= selectedQuantity; i++) {
+                  const ticketOption = document.createElement('div');
+                  ticketOption.innerHTML = `
+                    <h4>Ticket ${i}</h4>
+                    <input type="radio" name="ticket_${i}" value="economy" id = "ticket-${i}" checked="checked"> Economy
+                    <input type="radio" name="ticket_${i}" value="standard" id = "ticket-${i}" > Standard
+                    <input type="radio" name="ticket_${i}" value="vip" id = "ticket-${i}" > VIP
+                    </br>
+                    <label for="seat-input">Ticket Seat:</label>
+                    <input type="text" id="seat-input" placeholder="Pick Your Seat" name="ticket_${i}_seat" class="small_input">
+                    </br></br>
+                  `;
+                  ticketOptionsContainer.appendChild(ticketOption);
+                }
+
+                calculateTotalPrice();
+              });
+
+              ticketOptionsContainer.addEventListener('change', () => {
+                calculateTotalPrice();
+              });
+
+              function calculateTotalPrice() {
+                const ticketOptions = ticketOptionsContainer.querySelectorAll('input[type="radio"]:checked');
+                let totalPrice = 0;
+
+                ticketOptions.forEach(option => {
+                  const ticketType = option.value;
+                  totalPrice += ticketPrices[ticketType];
+                });
+
+                totalPriceElement.textContent = `${totalPrice}€`;
+                
+              }
+
+          </script>
+
+
+          <script>
+              $(document).ready(function() {
+                $('#showForm1Button').on('click', function() {
+                  $('#newForm').show(); 
+                });
+              });
+
+              $(document).ready(function() {
+                $('#showForm2Button').on('click', function() {
+                  $('#newForm1').show(); 
+                });
+              });
+          </script>
+
+          <script>
+                        $(document).ready(function() {
+              $('#showForm1Button').on('click', function() {
+                var dropdownValue = $('#ticket-quantity').val();
+
+                var formHtml = '';
+                for (var i = 1; i <= dropdownValue; i++) {
+
+                  formHtml += '<input type="text" name="fullname' + i + '" placeholder="Full Name ' + i + '" required><br>';
+                }
+
+                $('#formContainer').html(formHtml);
+              });
+            });
+           
+          </script>
+
+          <script>
+              var randomNumber = Math.floor(10000 + Math.random() * 90000);
+
+              var randomNumberElement = document.getElementById("random-number");
+
+              randomNumberElement.textContent = randomNumber;
+
+          </script>
+
+          <script>
+            var dropdown1 = document.getElementById("ticket-quantity");
+            var myDiv = document.getElementById("ticket-options");
+
+            var elements = myDiv.getElementsByTagName("*");
+            
+            var nextButton = document.getElementById("showForm1Button");
+
+            nextButton.addEventListener("click", function() {
+
+              dropdown1.disabled = true;  
+            
+             
+            });
+          </script>
+
+
+
+
+
+<footer>
+    <a href="https://www.ds.unipi.gr/en/home-en/" class="address">2023 © Department of Digital Systems</a>
+</footer>
+
+</body>
+</html>
+
+

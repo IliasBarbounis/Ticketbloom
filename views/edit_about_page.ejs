@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+    <link rel="stylesheet" href="css/edit_about_page_styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit About</title>
+</head>
+<body style="background-color:#122f69;">
+    
+    
+        <div class="container">
+          
+            <div class="navbar">
+              <a href="/" class="logo">Ticketbloom</a>
+              
+              <nav>
+                <ul id="menuList" >
+                    <div id="parent">
+                       
+                        <div id="right">
+                        
+                         
+                            <li><a href="/logout" class="rb">Logout</a></li>
+                         
+                          
+                        </div>   
+                    </div>         
+                </ul>
+                
+                
+              </nav>
+            </div>
+            <form method="POST" action="/about_form" class="my-form" >
+              
+                <label for="title" class="form-label">Title</label>
+
+                <textarea class="form-textarea"  class="form-input" name="title" rows="2" required><%=about.title %> </textarea>
+             
+                <br><br>
+                <label for="content" class="form-label">Content</label>
+                <textarea class="form-textarea"  name="content" rows="20" required><%= about.text %> </textarea>
+             
+                
+                <br><br>
+                <button type="submit" class="form-button">Save</button>
+             
+            </form>
+        
+           
+                
+    <footer>
+        <a href="https://www.ds.unipi.gr/en/home-en/" class="address">2023 © Department of Digital Systems</a>
+    </footer>
+    
+</body>
+</html>
+
+

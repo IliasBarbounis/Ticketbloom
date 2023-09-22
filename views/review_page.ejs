@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+    <link rel="stylesheet" href="css/review_page_styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+</head>
+<body style="background-color:#122f69;">
+    
+    
+        <div class="container">
+          
+            <div class="navbar">
+              <a href="/" class="logo">Ticketbloom</a>
+              
+              <nav>
+                <ul id="menuList" >
+                    <div id="parent">
+                        <div id="center">
+                            <li><a href="/artistic_events" class="cb">Artistic Events</a></li>
+                        </div>
+                        <div id="right">
+                                               
+                            
+                            <li><a href="/my_profile" class="rb">My Profile</a></li>
+                            <li><a href="/about" class="rb">About</a></li>
+                            <li><a href="/logout" class="rb">Logout</a></li>
+                            
+                           </div>
+                          
+                        </div>   
+                    </div>         
+                </ul>
+                
+                
+              </nav>
+              <img src="/general_images/menu.png" class="menu-icon" 
+              onclick="togglemenu()">
+            </div>
+     
+
+           
+                
+                  
+            <div class="row">
+                    
+              <div class="col-1">
+                <form class="review-form" action="/submit_review" method="POST"  >
+                  
+                  <p class="text">Write a Review</p>
+                  <br>
+                  <input type="hidden" value="<%= username %>" name="username">
+                
+                  
+                  <input type="hidden" value="<%= event.title %>" name="event_title">
+
+                  <label class="comment"> <%= event.title %></label>
+                  <label class="comment">Comment:</label>
+                  <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
+                  <input type="file" name="photo" class="comment">
+                  <br><br>
+                  <label class="comment">Rate: 1-5</label>
+                  
+                  <input type="text" name="rate"  required> 
+                  <br><br>
+                  <button type="submit">Submit</button>
+                </form>
+                
+
+              </div>
+              <div class="col-2">
+                <p class="text3">User Reviews</p>
+                <br>
+               
+                <% reviews.forEach((item) => { %>
+                  <div class="text2">
+                    <b><%= item.username %></b>
+                    <br>
+                    <%= item.comment %>
+                    <br>
+                    Rate: <%= item.rate %>/5
+                  
+                  <br><br>
+                  </div>
+                
+                <% }); %>
+                
+                  
+              </div>
+          </div>
+            
+          
+    <footer>
+        <a href="https://www.ds.unipi.gr/en/home-en/" class="address">2023 © Department of Digital Systems</a>
+    </footer>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="css//login_page_styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+</head>
+<body style="background-color:#122f69;">
+    
+    
+      
+        <div class="container" ng-app="myApp">
+
+          <div class="navbar">
+            <a href="/" class="logo">Ticketbloom</a>
+          </div>
+
+            <form method="post" ng-submit="submitLogin()" action="/login" id="loginForm" >
+      
+                <div class="container">
+            
+                  <label class="formHeader"><b>Login</b></label>
+                  <br></br>
+                  <label for="uname"><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" name="username" ng-model="user.username" required> 
+                  <br></br>
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="password" ng-model="user.password" required> 
+                  <br></br>
+                  <div id="errorMessage" style="color: red;"></div>
+                  <button type="submit">Login</button>
+                  <a href="/" class="cancelbtn">Cancel</a>
+                </div>
+              
+              </form>
+              
+
+             
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+              
+     
+              <script>
+                $(document).ready(function () {
+                  $('#loginForm').submit(function (event) {
+                    event.preventDefault();
+                    
+                    $.post($(this).attr('action'), $(this).serialize())
+                      .done(function (response) {
+                        
+                        window.location.href = '/logged_in'; 
+                      })
+                      .fail(function (xhr) {
+                      
+                        $('#errorMessage').text(xhr.responseText);
+                        $('#errorMessage').show(); 
+                      });
+                  });
+                });
+              </script>
+
+
+          </div> 
+    <footer>
+        <a href="https://www.ds.unipi.gr/en/home-en/" class="address">2023 © Department of Digital Systems</a>
+    </footer>
+    
+</body>
+</html>
+
+

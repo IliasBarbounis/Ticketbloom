@@ -1,0 +1,269 @@
+
+
+.container1{
+  display: flex;
+}
+
+.container1 input{
+  margin-right: 10px;
+}
+    .navbar{
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  
+    .logo{
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 15px 0;
+      text-decoration: none;
+    }
+
+
+  *{
+    margin: 0;
+    padding: 0;
+    
+   }
+ 
+   
+    .container{
+        padding: 16px;
+      width: 100%;
+      min-height: 50vh;
+      padding-left: 8%;
+      padding-right: 8%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    
+  
+    .event_image{
+        padding-top: 30;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+   
+    p{
+      color: white;
+      padding-top: 20;
+      padding-left: 250;
+      padding-right: 250;
+    }
+
+    .info {
+      color: white;
+      padding-left: 250;
+    }
+  
+  
+    footer {
+      display:flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      border-top: 1px solid white;
+      justify-content:center;
+      align-items:center;
+      }
+  
+      .address {
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        margin:auto;
+        text-decoration: none;
+        }
+  
+
+        .bigbox {
+          border: 3px solid #f1f1f1;
+          width: 600px;
+          margin: 8% auto;  
+        }
+        
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+        
+        button {
+          background-color: #04AA6D;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+        }
+      
+        .cancelbtn {
+          width: auto;
+          padding: 10px 5px;
+          color: rgb(255, 255, 255);
+          text-decoration: none;
+        }
+        
+        button:hover {
+          opacity: 0.8;
+        }
+
+        label{
+          color: rgb(255, 255, 255);
+        }
+
+        .formHeader{
+          display: block;
+          text-align: center;
+          line-height: 150%;
+          font-size: 25;
+        }
+
+        nav{
+          flex: 1;
+          text-align: right;
+        }
+      
+        nav ul li{
+          list-style: none;
+          display: inline-block;
+          margin-right: 20px;
+        }
+
+        
+      
+        nav ul li a{
+          text-decoration: none;
+          color: white;
+          font-size: 14px;
+        }
+      
+        nav ul li a:hover{
+          color: #ff5ea2;
+        }
+      
+        .cb{
+          font-weight: bold;
+          font-size: 23;
+          color: white;
+          cursor: pointer;
+        }
+      
+        .rb{
+          font-size: 20;
+          color: white;
+          cursor: pointer;
+        }
+      
+        #parent {
+          display: flex;
+        }
+      
+        #center {
+          margin-left: 33%;
+      
+        }
+        #right {
+          flex: 1;
+        }
+
+        @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #242333;
+  color: #fff;
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+}
+
+@media only screen and (max-width:700px){
+  ul{
+    padding-left: 10px;
+  }
+ 
+  
+
+  *{
+    margin: 0;
+    padding: 0;
+    
+   }
+
+   .events {
+    margin-left: 0;
+    padding-left: 0;
+   }
+
+   nav ul{
+    width: 100%;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    z-index: 2;
+  }
+
+  nav ul li{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  nav ul li a{
+    color: white;
+  }
+
+  .menu-icon{
+    
+    width: 35;
+    display: block;
+  }
+
+  #menuList{
+    overflow: hidden;
+  }
+
+  .event{
+    padding: 0;
+  }
+
+  .info {
+    color: white;
+    padding-left: 0;
+  }
+
+  p{
+    color: white;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .bigbox {
+    border: 3px solid #f1f1f1;
+    width: 100%;
+    margin: 8% auto;  
+  }
+
+  .event_image{
+    padding-right: 10%;
+  }
+
+}

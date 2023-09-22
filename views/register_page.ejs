@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="css/register_page_styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body style="background-color:#122f69;">
+    
+    
+      
+    <div class="container" ng-app>
+        <div class="navbar">
+            <a href="/" class="logo">Ticketbloom</a>
+          </div>
+
+        <form method="post" action="/register" name="myform" ng-submit="register()">
+            <div class="container">
+              <label class="formHeader"><b>Registration</b></label>
+              <br></br>
+
+              <label for="username"><b>Username: user<%=userNumber%></b></label>
+
+              <br></br>
+
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="password" ng-model="user.password" ng-minlength="3" required> 
+              <span ng-show="myform.password.$touched && myform.password.$error.required">Required Password</span>
+              <span ng-show="myform.password.$touched && myform.password.$error.minlength">Min 3 Characters</span>
+              <br></br>
+
+              <label for="name"><b>First Name</b></label>
+              <input type="text" placeholder="Enter First Name" name="name" ng-model="user.firstName"  required> 
+              <span ng-show="myform.name.$touched && myform.name.$error.required">Required First Name</span>
+              <br></br>
+
+              <label for="surname"><b>Surname</b></label>
+              <input type="text" placeholder="Enter Surname" name="surname" ng-model="user.surname"required> 
+              <span ng-show="myform.surname.$touched && myform.surname.$error.required">Required Surname</span>
+              <br></br>
+
+              <label for="phoneNumber" ><b>Phone Number</b></label>
+              <input type="text" placeholder="Enter Phone Number" name="phoneNumber" ng-model="user.phoneNumber" required> 
+              <span ng-show="myform.phoneNumber.$touched && myform.phoneNumber.$error.required">Required Phone Number</span>
+              <br></br>
+
+              <label for="email"><b>e-mail</b></label>
+              <input type="email" placeholder="Enter e-mail" name="email" ng-model="user.email" required> 
+              <span ng-show="myform.email.$error.email">Not valid email</span>
+              <br></br>
+
+              <button type="submit" ng-disabled="myform.$invalid">Register</button>
+                <a href="/" class="cancelbtn">Cancel</a>
+    
+            </div>
+          
+          </form>
+
+        
+        
+
+      </div> 
+<footer>
+    <a href="https://www.ds.unipi.gr/en/home-en/" class="address">2023 © Department of Digital Systems</a>
+</footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,128 @@
+<html lang="en" >
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/admin_page_styles.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+
+    <title>Admin</title>
+    <style>
+        table {
+          border-collapse: collapse;
+        }
+      
+        td, th {
+          padding: 10px; 
+        }
+      </style>
+    </head> 
+    <body style="background-color:#122f69;" >
+            <div class="container">
+                
+                <div class="navbar">
+                    <a href="/" class="logo">Ticketbloom</a>
+                    <p class="name"><b>User: <%=username %></b></p>
+                    
+                    <nav>
+                      <ul id="menuList" >
+                          <div id="parent">
+                              
+                              <div id="right">
+                                <li><a href="/edit_events" class="rb">Edit Event</a></li>
+                                <li><a href="/edit_about" class="rb">Edit About</a></li>
+                                <li><a href="/logout" class="rb">Logout</a></li>
+                                
+                                                                
+                              </div>   
+                          </div>         
+                      </ul>
+                      
+                    </nav>
+              
+                    
+                    
+                    <img src="/general_images/menu.png" class="menu-icon" 
+                    onclick="togglemenu()">
+                  </div>
+              
+                <div class="row">
+                    
+                    <div class="col-1">
+              
+                          <p class="text">Users</p>
+                          <br><br>
+                          <table class="table1">
+                            <thead>
+                                <tr class="history">
+                                  <th>Username</th>
+                                  <th>Password</th>
+                                  <th>Name</th>
+                                  <th>Surname</th>
+                                  <th>Phone </th>
+                                  <th>email</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                          <% users.forEach((item) => { %>         
+                            <% if (item.counter ) { %>
+                              
+                            <% } else { %>
+                              <tr  class="history">
+                                <form action="/processForm"  method="POST">
+                                  
+                                  <td><input readonly class="input-field" type="text"  name="username" value=<%= item.username %> > </td>
+                                  <td> <input readonly  class="input-field" type="text" placeholder="New Password" name="password" value=<%=item.password %> > </td>
+                                  <td>  <input type="text" placeholder="New Name" name="name" value=<%=item.name %> > </td>
+                                  <td><input type="text" placeholder="New Surname" name="surname" value=<%=item.surname %> > </td>
+                                  <td>  <input type="text" placeholder="New PhoneNumber" name="phone" value=<%=item.phoneNumber %> ></td>
+                                  <td><input type="text" placeholder="New e-mail" name="email" value=<%=item.email %> > </td>
+
+                                  <td><input type="hidden" name="buttonClicked" id="buttonClicked" value=""></td>
+                                  <td> <button type="submit" name="action" value="edit">Edit</button></td>
+                                  <td>  <button type="submit" name="action" value="delete">Delete</button></td>
+                                </form>
+
+                               </tr>
+                            <% } %>                     
+                                 
+
+                          <% }); %>
+                        </tbody>
+                        </table>
+                       
+                    </div>
+                  
+                      
+                </div>
+
+
+              </div>    
+    </div>
+        
+    <script>
+        var menuList = document.getElementById("menuList");
+
+        menuList.style.maxHeight = "0px";   
+
+        function togglemenu(){
+            if(menuList.style.maxHeight == "0px"){
+                menuList.style.maxHeight = "200px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+
+        <footer>
+            <a href="https://www.ds.unipi.gr/en/home-en/" class="address">2023 © Department of Digital Systems</a>
+        </footer>
+    </body>
+</html>
