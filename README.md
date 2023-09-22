@@ -23,7 +23,7 @@
   <li>
      <h3>Home page</h3>
       <h5>Functions:Sign up,Log in</h5>
-      <img src=''></img> 
+      <img src='Screenshots/'></img>
       <h4>Sign up</h4>
       <h5>User Inserts the Email,Username and Fullname to Sign up.</h5>
       <img src='Screenshots/Screenshot from 2022-07-06 00-47-03.png'></img>
