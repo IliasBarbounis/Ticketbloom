@@ -6,12 +6,6 @@
   <li>node ./server.js</li>
   <li>Open a web browser and in the url put “http://127.0.0.1:3000”</li>
 </ol>
-  <h4>Mongodb Data</h4>
-<ul>
-  <li><h5>Single Users:{'email': email, 'username': username, 'fullname': fullname, 'password': password, 'type': "simple_user"}</h5></li>
-  <li><h5>Admin Users:{'email': email, 'username': username, 'password': password, 'type': "admin_user"}</h5></li>
-  <li><h5>Notes:{username': username, 'title': title, 'noteText': noteText, 'keywords': keywords, 'date': date}</h5></li>
-  </ul>
   
 <h4>Default Admin</h4>
   
@@ -29,7 +23,7 @@
   <li>
      <h3>Home page</h3>
       <h5>Functions:Sign up,Log in</h5>
-      <img src='Screenshots/Screenshot from 2022-07-06 00-44-52.png'></img> 
+      <img src=''></img> 
       <h4>Sign up</h4>
       <h5>User Inserts the Email,Username and Fullname to Sign up.</h5>
       <img src='Screenshots/Screenshot from 2022-07-06 00-47-03.png'></img>
