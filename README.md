@@ -22,7 +22,6 @@
 <ul>
   <li>
      <h3>Home page</h3>
-      <h5>Functions: Sign in, Register, My Profile, About, Artistic Events</h5>
       <img src='Screenshots/Home.jpg'></img>
   </li>
   <li>
@@ -38,10 +37,7 @@
      <h3>About</h3>
       <img src='Screenshots/About.jpg'></img>
   </li>
-  <li>
-     <h3>About</h3>
-      <img src='Screenshots/About.jpg'></img>
-  </li>
+   <h2>Logged in User Functions</h3>
   <li>
      <h3>Booking History</h3>
       <img src='Screenshots/Booking History.jpg'></img>
@@ -64,6 +60,7 @@
      <h3>Review Page</h3>
       <img src='Screenshots/Review Page.jpg'></img>
   </li>
+  <h2>Logged in Admin Functions</h3>
   <li>
      <h3>Edit Users</h3>
       <img src='Screenshots/User Edit.jpg'></img>
